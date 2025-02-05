@@ -1,0 +1,124 @@
+/* Global styling for the body */
+body {
+    display: flex;
+    justify-content: center;      /* Center horizontally */
+    align-items: center;          /* Center vertically */
+    height: 100vh;                /* Full viewport height */
+    margin: 0;                    /* Remove default margin */
+    background: url('love-bg.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover;       /* Ensure background image covers full viewport */
+    font-family: Arial, sans-serif;
+}
+
+/* Centered container styling */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;   /* Set a max width for the container */
+    width: 90%;          /* Make it responsive */
+}
+
+/* Styling for the question text */
+h1 {
+    color: rgb(143, 60, 95);
+    font-size: 2em;
+    
+}
+
+/* Button styles */
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+/* Button image size */
+button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Yes button style */
+.yes {
+    background-color: red;
+    color: white;
+}
+
+/* No button style */
+.no {
+    background-color: grey;
+    color: white;
+}
+
+/* Floating hearts animation (optional for additional effects) */
+@keyframes heartfall {
+    0% { transform: translateY(-100vh); opacity: 0; }
+    100% { transform: translateY(100vh); opacity: 1; }
+}
+
+.heartfall {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;   /* Full viewport height */
+    width: 100%;     /* Full width */
+    pointer-events: none;  /* Ensure hearts don't block interactions */
+}
+
+.heartfall::before, .heartfall::after {
+    content: "💖";
+    position: absolute;
+    font-size: 30px;
+    animation: heartfall 3s ease-in-out infinite;
+    left: calc(10% + 80% * var(--x));
+    animation-delay: var(--d);
+    z-index: 1000;
+}
+
+.heartfall::before {
+    top: -10%;
+    --x: 0.3;
+    --d: 0s;
+}
+
+.heartfall::after {
+    top: -15%;
+    --x: 0.7;
+    --d: 1s;
+}
+/* Size for the happy heart image on YES page */
+.yes-page img {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+    margin-top: 20px;
+}
+/* Size for the happy heart image on YES page */
+.no-page img {
+    width: 120px; /* Adjust size as needed */
+    height: auto;
+    margin-top: 20px;
+}
+/* Valentine Message Styling */
+.valentine-message {
+    font-size: 2.5em;  /* Increase font size */
+    color: #FF1493;  /* Pink color */
+    font-weight: bold;  /* Make the text bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 20, 147, 0.8);  /* Glowing text effect */
+    margin-top: 20px;
+}
